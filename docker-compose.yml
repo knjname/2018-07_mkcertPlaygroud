@@ -1,0 +1,12 @@
+version: "2.4"
+
+services:
+
+  mkcert-nginx:
+    image: nginx:latest
+    ports:
+      - 20443:443
+    volumes:
+      - ./certs:/certs:ro
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+
